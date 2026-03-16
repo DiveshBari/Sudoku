@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Spring Boot parent — enables java -jar and embedded Tomcat -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.3</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.sudoku</groupId>
+    <artifactId>sudoku-webforj-spring</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <java.version>21</java.version>
+        <webforj.version>25.11</webforj.version>
+    </properties>
+
+    <dependencies>
+        <!-- webforJ Spring Boot starter (includes webforJ transitively in 25.11+) -->
+        <dependency>
+            <groupId>com.webforj</groupId>
+            <artifactId>webforj-spring-boot-starter</artifactId>
+            <version>${webforj.version}</version>
+        </dependency>
+
+        <!-- Optional: live browser reload on save -->
+        <dependency>
+            <groupId>com.webforj</groupId>
+            <artifactId>webforj-spring-devtools</artifactId>
+            <version>${webforj.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Spring Boot Maven plugin — enables mvn spring-boot:run and java -jar -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludeDevtools>true</excludeDevtools>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

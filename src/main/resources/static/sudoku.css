@@ -1,0 +1,31 @@
+/* ── Sudoku webforJ Spring Boot — Responsive ── */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --bg:           #f0f4f8;
+    --cell-given:   #edf2f7;
+    --cell-wrong:   #fed7d7;
+    --cell-selected:#bee3f8;
+    --cell-normal:  #ffffff;
+    --border-thin:  #cbd5e0;
+    --border-thick: #2d3748;
+    --text-dark:    #1a202c;
+    --text-blue:    #2b6cb0;
+    --text-red:     #c53030;
+    --text-muted:   #718096;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+}
+
+.sudoku-levels button,
+.sudoku-controls button,
+.sudoku-numpad button {
+    font-family: inherit;
+}
